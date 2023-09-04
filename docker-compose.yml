@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    container_name: flask_app
+    build: ./app
+    expose:
+      - "3031"
+    volumes:
+      - ./app:/var/www/app
+    command: uwsgi --ini /var/www/app/config/uwsgi.ini
+
+  nginx:
+    container_name: flask_nginx
+    build: ./nginx
+    restart: always
+    volumes:
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+    ports:
+      - "80:80"

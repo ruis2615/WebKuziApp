@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="set">
+    <form action="/set" method="POST">
+        <label>設定したいアタリ本数を指定(半角数字)：
+            <input class="win_count" name="win_count" type="number" placeholder="数を入力" required>
+        </label>
+        <label>設定したいハズレ本数を指定(半角数字)：
+            <input class="lose_count" name="lose_count" type="number" placeholder="数を入力" required>
+        </label>
+        <button type="submit">保存する</button>
+    </form>
+</div>
+{% endblock %}

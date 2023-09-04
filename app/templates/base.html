@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <a href="/">くじ引き</a>
+    <form action="/reset" method="POST">
+        <button type="submit">リセット</button>
+    </form>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <a>© 2023 ruis. All Rights Reserved.</a>
+</footer>
+</body>
+</html>
